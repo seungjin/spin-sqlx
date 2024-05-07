@@ -25,11 +25,13 @@ impl std::fmt::Display for Pet {
 
 #[http_component]
 async fn handle_fetch_many(_req: IncomingRequest, resp: ResponseOutparam) {
-    let mut headers = spin_sdk::http::Headers::new();
-    headers.append(
-        &"content-type".to_string(),
-        &"text/plain".as_bytes().to_vec(),
-    );
+    let headers = spin_sdk::http::Headers::new();
+    headers
+        .append(
+            &"content-type".to_string(),
+            &"text/plain".as_bytes().to_vec(),
+        )
+        .unwrap();
     let og = OutgoingResponse::new(headers);
     let mut resp_stm = og.take_body();
     resp.set(og);
