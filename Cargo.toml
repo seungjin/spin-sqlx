@@ -6,7 +6,7 @@ edition = "2021"
 exclude = ["examples"]
 
 [dependencies]
-spin-sdk = { git = "https://github.com/fermyon/spin-rust-sdk", branch = "main" }
+spin-sdk = { git = "https://github.com/fermyon/spin-rust-sdk.git", branch = "main" }
 sqlx = "0.7.2"
 
 anyhow = "1"
