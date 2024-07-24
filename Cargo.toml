@@ -7,8 +7,6 @@ exclude = ["examples"]
 
 [dependencies]
 spin-sdk = { git = "https://github.com/fermyon/spin-rust-sdk.git", branch = "main" }
-sqlx = { version = "0.7", features = ["sqlite"] }
-
 anyhow = "1"
 either = "1.6.1"
 futures = { version = "0.3.19", default-features = false }
