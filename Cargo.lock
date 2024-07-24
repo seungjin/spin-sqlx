@@ -1013,7 +1013,12 @@ dependencies = [
 [[package]]
 name = "spin-executor"
 version = "3.0.1"
+<<<<<<< HEAD
 source = "git+https://github.com/fermyon/spin-rust-sdk?branch=main#184946fdd3cb48de3c3af60f8e053b42947c791b"
+=======
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2df1a5e2cc70a628c9ea6914770c234cc4a292218091e6707ae8be68b4a5de76"
+>>>>>>> origin
 dependencies = [
  "futures",
  "once_cell",
@@ -1023,7 +1028,12 @@ dependencies = [
 [[package]]
 name = "spin-macro"
 version = "3.0.1"
+<<<<<<< HEAD
 source = "git+https://github.com/fermyon/spin-rust-sdk?branch=main#184946fdd3cb48de3c3af60f8e053b42947c791b"
+=======
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef3d03e5a205a641d85ace3af1604b39dba63d3ffe3865a71bda02fb482ae60a"
+>>>>>>> origin
 dependencies = [
  "anyhow",
  "bytes",
@@ -1035,7 +1045,12 @@ dependencies = [
 [[package]]
 name = "spin-sdk"
 version = "3.0.1"
+<<<<<<< HEAD
 source = "git+https://github.com/fermyon/spin-rust-sdk?branch=main#184946fdd3cb48de3c3af60f8e053b42947c791b"
+=======
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ed97f54a15f2d8b1fa15e436d88bacb95a5b379a3e0f8fbd8042eb8696ca048a"
+>>>>>>> origin
 dependencies = [
  "anyhow",
  "async-trait",
