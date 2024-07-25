@@ -10,11 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 anyhow = "1"
-<<<<<<< HEAD
 spin-sdk = { git = "https://github.com/fermyon/spin-rust-sdk", branch = "main" }
-=======
-spin-sdk = "3.0"
->>>>>>> origin
 spin-sqlx = { path = "../.." }
 sqlx = "0.8.0"
 
