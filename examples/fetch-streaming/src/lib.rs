@@ -1,13 +1,6 @@
-use futures::stream::StreamExt;
-<<<<<<< HEAD
 use futures::SinkExt;
-// use spin_executor::bindings::wasi::io::streams;
-use spin_sdk::http::{
-    Fields, IncomingRequest, OutgoingResponse, ResponseOutparam,
-};
-=======
+use futures::stream::StreamExt;
 use spin_sdk::http::{Headers, IncomingRequest, OutgoingResponse, ResponseOutparam};
->>>>>>> origin
 use spin_sdk::http_component;
 
 #[derive(Debug, sqlx::FromRow)]
@@ -20,31 +13,17 @@ struct Pet {
 impl std::fmt::Display for Pet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let fin_desc = if self.is_finicky { "is" } else { "is not" };
-        f.write_fmt(format_args!(
-            "{}, aged {}, {} finicky",
-            self.name, self.age, fin_desc
-        ))
+        f.write_fmt(format_args!("{}, aged {}, {} finicky", self.name, self.age, fin_desc))
     }
 }
 
 #[http_component]
 async fn handle_fetch_many(_req: IncomingRequest, resp: ResponseOutparam) {
-<<<<<<< HEAD
-    let headers = spin_sdk::http::Headers::new();
-    headers
-        .append(
-            &"content-type".to_string(),
-            &"text/plain".as_bytes().to_vec(),
-        )
-        .unwrap();
-    let og = OutgoingResponse::new(headers);
-=======
     let headers = Headers::new();
     headers.append(&"content-type".into(), &"text/plain".into()).unwrap();
     let og = OutgoingResponse::new(headers);
     og.set_status_code(200).unwrap();
 
->>>>>>> origin
     let mut resp_stm = og.take_body();
     resp.set(og);
 
@@ -70,11 +49,7 @@ async fn handle_fetch_many(_req: IncomingRequest, resp: ResponseOutparam) {
 
     let mut resp_lines = pets.map(|pet| match pet {
         Ok(pet) => Ok(format!("{pet}\n").into_bytes()),
-<<<<<<< HEAD
-        Err(e) => panic!(),
-=======
         Err(e) => Ok(format!("{e:?}").into_bytes()), // TODO: would prefer this to be Err(StreamError) but that's not constructible
->>>>>>> origin
     });
 
     _ = resp_stm.send_all(&mut resp_lines).await;
