@@ -16,6 +16,6 @@ spin-sdk = { git = "https://github.com/fermyon/spin-rust-sdk", branch = "main" }
 spin-sdk = "3.0"
 >>>>>>> origin
 spin-sqlx = { path = "../.." }
-sqlx = "0.7.2"
+sqlx = "0.8.0"
 
 [workspace]
